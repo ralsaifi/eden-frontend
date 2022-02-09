@@ -1,3 +1,7 @@
 import "./style.css";
+import React from 'react';
+import ReactDOM from "react-dom";
 
-console.log('Hello, Eden');
+import App from './components/app.component';
+
+ReactDOM.render(<App />, document.getElementById('app'));

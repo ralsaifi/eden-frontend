@@ -14,6 +14,16 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react']
+                    }
+                }
+            },
+            {
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -28,5 +38,11 @@ module.exports = {
             directory: path.join(__dirname, 'dist'),
         },
         port: 9000,
+        client: {
+            overlay: {
+                warnings: false, 
+                errors: true
+            }
+          },
     },
 }
