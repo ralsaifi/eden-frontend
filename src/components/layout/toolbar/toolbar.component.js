@@ -1,16 +1,37 @@
 import React from "react";
 
 export class Toolbar extends React.Component {
+    state = {activeLink: ''}
+
+    linkClick(linkName) {
+        this.setState({activeLink: linkName});
+        // TODO: emit the link name value to parent
+    }
+
+    componentDidMount() {
+        this.setState({activeLink: this.props?.activeLink?.value ?? ''});
+    }
+
     render() {
         return (
-            <div className="toolbar bg-white py-4 px-10 flex items-center gap-4 shadow-md">
+            <div className="toolbar">
                 <h1 className="text-2xl">Hello Eden!</h1>
                 <div className="flex gap-2">
-                    <a className="cursor-pointer p-2 bg-gray-100 rounded hover:bg-gray-700 hover:text-gray-100">Containers</a>
-                    <a className="cursor-pointer p-2 bg-gray-100 rounded hover:bg-gray-700 hover:text-gray-100">Branches</a>
-                    <a className="cursor-pointer p-2 bg-gray-100 rounded hover:bg-gray-700 hover:text-gray-100">Tasks</a>
+                    {this.props.links?.map(link => {
+                        return (
+                            <a className={`toolbar-link ${this.state.activeLink === link.value ? 'toolbar-active-link' : ''}`}
+                               onClick={() => this.linkClick(link.value)} key={link.value}>{link.displayValue}</a>
+                        );
+                    })}
                 </div>
-                <button className="ml-auto p-2 bg-gray-700 rounded text-gray-100 shadow-lg">Add</button>
+                <div className="relative ml-auto">
+                    <button className="toolbar-create-button">Create</button>
+                    <div className="create-options">
+                        <div class="create-option-button">Create Container</div>
+                        <div class="create-option-button">Create Branch</div>
+                        <div class="create-option-button">Create Task</div>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.toolbar {
+    @apply bg-white py-4 px-10 flex items-center gap-4 shadow-md;
+}
+
+.toolbar-link {
+    @apply cursor-pointer p-2 bg-gray-100 rounded hover:bg-gray-700 hover:text-gray-100;
+}
+
+.toolbar-active-link {
+    @apply bg-gray-700 text-gray-100;
+}
+
+.toolbar-create-button {
+    @apply p-2 px-2 bg-green-600 rounded text-gray-100 hover:shadow-lg;
+}
+
+.create-button {
+    @apply p-1 px-2 border-green-600 border-2 rounded text-green-600 hover:shadow-lg;
+}
+
+.toolbar-create-button:hover + .create-options, .create-options:hover {
+    @apply block;
+}
+
+.create-options {
+    @apply p-2 bg-white shadow-xl rounded border border-gray-100 w-52 absolute right-0 hidden;
+}
+
+.create-option-button {
+    @apply border-b border-gray-200 p-1 w-full cursor-pointer hover:bg-gray-100;
+}
+
+/** table classes *******/
+.table-cell {
+    @apply p-3 px-6;
+}
+
+.table-header-cell {
+    @apply table-cell font-bold;
+}

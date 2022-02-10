@@ -23,7 +23,6 @@ export class Content extends React.Component {
     render() {
         return (
             <div className="p-10">
-                <h2 className="text-2xl mb-3">Container list: </h2>
                 <Containers />
             </div>
         );

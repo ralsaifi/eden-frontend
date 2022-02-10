@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import containers from './containers.json';
+import containerList from './containers.json';
 
 export class Containers extends React.Component {
     state = {
@@ -10,9 +10,8 @@ export class Containers extends React.Component {
     async getContainerList() {
         // const response = await axios.get('todo');
         // if (!response.data) return; 
-        // this.data.containers = response.data;
-        this.setState({containers: containers});
-        // this.data.containers = containers;
+        // this.setState({containers: response.data});
+        this.setState({containers: containerList});
     }
 
     async stopContainer(containerToStop) {
@@ -28,27 +27,33 @@ export class Containers extends React.Component {
 
     render() {
         return (
-            <div className="overview bg-white shadow-xl">
-                <div className="flex justify-between bg-gray-200 text-gray-700 rounded-t">
-                    <span className="p-3 px-6 border-sm w-64 font-bold">Container Name</span>
-                    <span className="p-3 px-6 border-sm w-full font-bold">Branch Name</span>
-                    <span className="p-3 px-6 border-sm w-52 font-bold">Project</span>
-                    <span className="p-3 px-6 border-sm w-52 font-bold">Status</span>
-                    <span className="p-3 px-6 border-sm w-52 font-bold">Port</span>
-                    <span className="p-3 px-6 border-sm w-40 font-bold">Action</span>
+            <div>
+                <div class="flex mb-3.5 justify-content-start">
+                    <h2 class="text-2xl">Container list</h2>
+                    <button className="create-button ml-1.5">Create</button>
                 </div>
-                {[this.state.containers].map((container, i) => {
-                    return (
-                        <div className="flex justify-between rounded-b border-t border-gray-200" key="{i}">
-                            <span className="p-3 px-6 border-sm w-64">{container.containerName}</span>
-                            <span className="p-3 px-6 border-sm w-full">feature/2022-02-16_IT-2639_stock_transfer</span>
-                            <span className="p-3 px-6 border-sm w-52">Genisys</span>
-                            <span className="p-3 px-6 border-sm w-52">Running</span>
-                            <span className="p-3 px-6 border-sm w-52">5002</span>
-                            <span className="p-3 px-6 border-sm w-40">Menu</span>
-                        </div>
-                    );
-                })}
+                <div className="overview bg-white shadow-xl">
+                    <div className="flex justify-between bg-gray-200 text-gray-700 rounded-t">
+                        <span className="table-header-cell w-72">Container Name</span>
+                        <span className="table-header-cell w-full">Branch Name</span>
+                        <span className="table-header-cell w-64">Project</span>
+                        <span className="table-header-cell w-52">Status</span>
+                        <span className="table-header-cell w-52">Port</span>
+                        <span className="table-header-cell w-40">Action</span>
+                    </div>
+                    {this.state.containers.map((container, i) => {
+                        return (
+                            <div className="flex justify-between rounded-b border-t border-gray-200" key={i}>
+                                <span className="table-cell w-72">{container.containerName}</span>
+                                <span className="table-cell w-full">{container.branchName}</span>
+                                <span className="table-cell w-64">{container.projectName}</span>
+                                <span className="table-cell w-52">{container.status}</span>
+                                <span className="table-cell w-52">{container.port}</span>
+                                <span className="table-cell w-40">Menu</span>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
         );
     }
