@@ -11,11 +11,16 @@ export default class App extends React.Component {
         ]
     };
 
+    toolbarLinkClick(linkClicked) {
+
+        console.log(linkClicked);
+    }
+
     render() {
         return (
             <div className="bg-gray-100 w-screen h-screen">
-                <Toolbar links={this.state.toolbarLinks} activeLink={this.state.toolbarLinks[0]}/>
-                <Content />
+                <Toolbar links={this.state.toolbarLinks} activeLink={this.state.toolbarLinks[0]} menuClick={this.toolbarLinkClick}/>
+                <Content activeLink={this.state.toolbarLinks[0]}/>
             </div>
         );
     }

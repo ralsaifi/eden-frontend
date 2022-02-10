@@ -28,8 +28,8 @@ export class Containers extends React.Component {
     render() {
         return (
             <div>
-                <div class="flex mb-3.5 justify-content-start">
-                    <h2 class="text-2xl">Container list</h2>
+                <div className="flex mb-3.5 justify-content-start">
+                    <h2 className="text-2xl">Container list</h2>
                     <button className="create-button ml-1.5 flex">
                         Create
                     </button>

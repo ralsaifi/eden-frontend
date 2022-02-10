@@ -6,6 +6,8 @@ export class Toolbar extends React.Component {
     linkClick(linkName) {
         this.setState({activeLink: linkName});
         // TODO: emit the link name value to parent
+        if (this.props.menuClick)
+            this.props.menuClick(linkName);
     }
 
     componentDidMount() {
@@ -32,9 +34,9 @@ export class Toolbar extends React.Component {
                         <span className="material-icons">add</span>
                     </button>
                     <div className="create-options">
-                        <div class="create-option-button">Create Container</div>
-                        <div class="create-option-button">Create Branch</div>
-                        <div class="create-option-button">Create Task</div>
+                        <div className="create-option-button">Create Container</div>
+                        <div className="create-option-button">Create Branch</div>
+                        <div className="create-option-button">Create Task</div>
                     </div>
                 </div>
             </div>
