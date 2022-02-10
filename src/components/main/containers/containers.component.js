@@ -30,7 +30,9 @@ export class Containers extends React.Component {
             <div>
                 <div class="flex mb-3.5 justify-content-start">
                     <h2 class="text-2xl">Container list</h2>
-                    <button className="create-button ml-1.5">Create</button>
+                    <button className="create-button ml-1.5 flex">
+                        Create
+                    </button>
                 </div>
                 <div className="overview bg-white shadow-xl">
                     <div className="flex justify-between bg-gray-200 text-gray-700 rounded-t">

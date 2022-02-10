@@ -5,9 +5,9 @@ import { Content } from "./layout/content/content.component";
 export default class App extends React.Component {
     state = {
         toolbarLinks: [
-            {value: 'containers', displayValue: 'Container'}, 
-            {value: 'branches', displayValue: 'Branches'}, 
-            {value: 'tasks', displayValue: 'Tasks'}
+            {value: 'containers', displayValue: 'Container', iconName: 'widgets'}, 
+            {value: 'branches', displayValue: 'Branches', iconName: 'mediation'}, 
+            {value: 'tasks', displayValue: 'Tasks', iconName: 'view_list'}
         ]
     };
 

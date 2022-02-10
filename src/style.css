@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply text-gray-700;
+}
+
+a {
+    @apply cursor-pointer;
+}
+
 .toolbar {
     @apply bg-white py-4 px-10 flex items-center gap-4 shadow-md;
 }
 
 .toolbar-link {
-    @apply cursor-pointer p-2 bg-gray-100 rounded hover:bg-gray-700 hover:text-gray-100;
+    @apply flex gap-1 p-2 bg-gray-100 rounded hover:bg-gray-700 hover:text-gray-100 duration-200;
 }
 
 .toolbar-active-link {
@@ -15,11 +23,11 @@
 }
 
 .toolbar-create-button {
-    @apply p-2 px-2 bg-green-600 rounded text-gray-100 hover:shadow-lg;
+    @apply p-2 px-2 bg-green-600 rounded text-gray-100 hover:shadow-lg hover:bg-gray-700 hover:text-white duration-200;
 }
 
 .create-button {
-    @apply p-1 px-2 border-green-600 border-2 rounded text-green-600 hover:shadow-lg;
+    @apply p-1 px-2 border-green-600 border-2 rounded text-green-600 hover:bg-green-600 hover:text-white duration-200;
 }
 
 .toolbar-create-button:hover + .create-options, .create-options:hover {
@@ -27,7 +35,7 @@
 }
 
 .create-options {
-    @apply p-2 bg-white shadow-xl rounded border border-gray-100 w-52 absolute right-0 hidden;
+    @apply p-2 bg-white shadow-xl rounded border border-gray-200 w-52 absolute right-0 hidden;
 }
 
 .create-option-button {
