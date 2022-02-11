@@ -10,7 +10,7 @@ export class Containers extends React.Component {
         this.state = {
             containers: [], 
             statusElements: {
-                1: <span className="material-icons animate-spin text-green-400">sync</span>, 
+                1: <span className="material-icons animate-spin text-green-400">autorenew</span>, 
                 2: <span className="material-icons text-yellow-400">report_problem</span>, 
                 3: <span className="material-icons text-red-400">error</span>
             }

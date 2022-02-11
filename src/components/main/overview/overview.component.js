@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React from 'react';
+import axios from 'axios';
 import overviewData from './overview.json';
 
 export class Overview extends React.Component {
