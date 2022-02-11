@@ -8,9 +8,9 @@ export default class App extends React.Component {
         super();
         this.state = {
             toolbarLinks: [
-                {value: 'containers', displayValue: 'Container', componentName: 'containers', iconName: 'widgets'}, 
-                {value: 'branches', displayValue: 'Branches', componentName: 'branches', iconName: 'mediation'}, 
-                {value: 'tasks', displayValue: 'Tasks', componentName: 'tasks', iconName: 'view_list'}
+                {value: 'containers', displayValue: 'Container', iconName: 'widgets'}, 
+                {value: 'branches', displayValue: 'Branches', iconName: 'mediation'}, 
+                {value: 'tasks', displayValue: 'Tasks', iconName: 'view_list'}
             ], 
             activeLink: undefined
         };

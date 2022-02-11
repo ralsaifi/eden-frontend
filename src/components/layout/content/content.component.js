@@ -21,7 +21,7 @@ export class Content extends React.Component {
     render() {
         return (
             <div className="p-10 flex-grow">
-                {this.state.components[this.props.activeLink?.componentName] ?? <Error404 />}
+                {this.state.components[this.props.activeLink?.value] ?? <Error404 />}
             </div>
         );
     }
