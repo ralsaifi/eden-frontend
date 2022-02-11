@@ -2,16 +2,19 @@ import React from 'react';
 import axios from 'axios';
 import containerList from './containers.json';
 
-// container statuses: 1 for running, 2 for stopped
+// container statuses: 1 for running, 2 for warnings, 3 for errors
 
 export class Containers extends React.Component {
-    state = {
-        containers: [], 
-        statusElements: {
-            1: <span className="material-icons animate-spin text-green-400">sync</span>, 
-            2: <span className="material-icons text-yellow-400">report_problem</span>, 
-            3: <span className="material-icons text-red-400">error</span>
-        }
+    constructor(props) {
+        super(props);
+        this.state = {
+            containers: [], 
+            statusElements: {
+                1: <span className="material-icons animate-spin text-green-400">sync</span>, 
+                2: <span className="material-icons text-yellow-400">report_problem</span>, 
+                3: <span className="material-icons text-red-400">error</span>
+            }
+        };
     }
 
     async getContainerList() {

@@ -11,7 +11,7 @@ a {
 }
 
 .toolbar {
-    @apply bg-white py-4 px-10 flex items-center gap-4 shadow-md;
+    @apply bg-white py-4 px-10 flex items-center gap-4 shadow-md relative;
 }
 
 .toolbar-link {

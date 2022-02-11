@@ -1,0 +1,20 @@
+{
+    "Genisys": {
+        "frontendContainers": 6, 
+        "backendContainers": 12, 
+        "frontendBranches": 14, 
+        "backendBranches": 18
+    }, 
+    "Portal": {
+        "frontendContainers": 6, 
+        "backendContainers": 12, 
+        "frontendBranches": 14, 
+        "backendBranches": 18
+    }, 
+    "Receiving": {
+        "frontendContainers": 6, 
+        "backendContainers": 12, 
+        "frontendBranches": 14, 
+        "backendBranches": 18
+    }
+}

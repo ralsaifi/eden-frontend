@@ -4,14 +4,16 @@ export class Toolbar extends React.Component {
     state = {activeLink: ''}
 
     linkClick(linkName) {
-        this.setState({activeLink: linkName});
-        // TODO: emit the link name value to parent
         if (this.props.menuClick)
             this.props.menuClick(linkName);
     }
 
     componentDidMount() {
         this.setState({activeLink: this.props?.activeLink?.value ?? ''});
+    }
+
+    isLinkActive(link) {
+        return this.props.activeLink && this.props.activeLink.value === link.value;
     }
 
     render() {
@@ -21,7 +23,7 @@ export class Toolbar extends React.Component {
                 <div className="flex gap-2">
                     {this.props.links?.map(link => {
                         return (
-                            <a className={`toolbar-link ${this.state.activeLink === link.value ? 'toolbar-active-link' : ''}`}
+                            <a className={`toolbar-link ${this.isLinkActive(link) ? 'toolbar-active-link' : ''}`}
                                onClick={() => this.linkClick(link.value)} key={link.value}>
                                 <span className="material-icons">{link.iconName}</span>
                                 {link.displayValue}
