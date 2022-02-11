@@ -12,8 +12,9 @@ export default class App extends React.Component {
     };
 
     toolbarLinkClick(linkClicked) {
-
-        console.log(linkClicked);
+        // const activeLink = this.state.toolbarLinks.find(link => link.value === linkClicked);
+        // if (!activeLink) return; 
+        // TODO: Use new active link to notify Content component
     }
 
     render() {
