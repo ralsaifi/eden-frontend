@@ -2,9 +2,16 @@ import React from 'react';
 import axios from 'axios';
 import containerList from './containers.json';
 
+// container statuses: 1 for running, 2 for stopped
+
 export class Containers extends React.Component {
     state = {
-        containers: []
+        containers: [], 
+        statusElements: {
+            1: <span className="material-icons animate-spin text-green-400">sync</span>, 
+            2: <span className="material-icons text-yellow-400">report_problem</span>, 
+            3: <span className="material-icons text-red-400">error</span>
+        }
     }
 
     async getContainerList() {
@@ -41,7 +48,7 @@ export class Containers extends React.Component {
                         <span className="table-header-cell w-64">Project</span>
                         <span className="table-header-cell w-52">Status</span>
                         <span className="table-header-cell w-52">Port</span>
-                        <span className="table-header-cell w-40">Action</span>
+                        <span className="table-header-cell w-24"></span>
                     </div>
                     {this.state.containers.map((container, i) => {
                         return (
@@ -49,9 +56,13 @@ export class Containers extends React.Component {
                                 <span className="table-cell w-72">{container.containerName}</span>
                                 <span className="table-cell w-full">{container.branchName}</span>
                                 <span className="table-cell w-64">{container.projectName}</span>
-                                <span className="table-cell w-52">{container.status}</span>
+                                <span className="table-cell w-52">
+                                    {this.state.statusElements[container.statusNumber]}
+                                </span>
                                 <span className="table-cell w-52">{container.port}</span>
-                                <span className="table-cell w-40">Menu</span>
+                                <span className="table-cell w-24">
+                                    <span className="material-icons cursor-pointer">settings</span>
+                                </span>
                             </div>
                         );
                     })}

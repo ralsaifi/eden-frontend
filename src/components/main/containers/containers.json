@@ -3,21 +3,21 @@
         "containerName": "GenMasterFE", 
         "branchName": "feature/2022-02-16_IT-2639_stock_transfer", 
         "projectName": "Genisys", 
-        "status": "Running", 
+        "statusNumber": 1, 
         "port": "5002"
     }, 
     {
         "containerName": "CPReleaseFE", 
         "branchName": "feature/2022-02-16_IT-2639_stock_transfer", 
         "projectName": "Customer Portal", 
-        "status": "Running", 
+        "statusNumber": 2, 
         "port": "5000"
     }, 
     {
         "containerName": "GenReleaseFE", 
         "branchName": "feature/2022-02-16_IT-2639_stock_transfer", 
         "projectName": "Genisys", 
-        "status": "Running", 
+        "statusNumber": 3, 
         "port": "5100"
     }
 ]
