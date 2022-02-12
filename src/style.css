@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .outline-button {
+        @apply p-1 px-2 border-gray-600 border-2 rounded text-gray-600 hover:bg-gray-600 hover:border-gray-600 hover:text-white duration-200;
+    }
+}
+
 body {
     @apply text-gray-700;
 }
@@ -27,8 +33,20 @@ a {
 }
 
 .create-button {
-    @apply p-1 px-2 border-green-600 border-2 rounded text-green-600 hover:bg-green-600 hover:text-white duration-200;
+    @apply outline-button;
+    @apply border-green-600 text-green-600 hover:bg-green-600 hover:border-green-600;
 }
+
+.stop-button {
+    @apply outline-button;
+    @apply border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:border-yellow-600;
+}
+
+.remove-button {
+    @apply outline-button;
+    @apply border-red-600 text-red-600 hover:bg-red-600 hover:border-red-600;
+}
+
 
 .toolbar-create-button:hover + .create-options, .create-options:hover {
     @apply block;

@@ -46,7 +46,7 @@ export class Overview extends React.Component {
 
     render() {
         return (
-            <div className="bg-indigo-500 text-white p-10 flex justify-evenly">
+            <div className="bg-indigo-500 text-white p-10 flex justify-evenly border-b border-bg-indigo-500">
                 {Object.keys(this.state.projects).map((projectName, i) => {
                     return (
                         <div className="flex flex-col items-center gap-1" key={i}>
@@ -57,6 +57,10 @@ export class Overview extends React.Component {
                         </div>
                     )
                 })}
+                {
+                    Object.keys(this.state.projects).length ? '' : 
+                        <div className="text-4xl">No projects</div>
+                }
             </div>
         );
     }

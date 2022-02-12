@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import containerList from './containers.json';
 
 // container statuses: 1 for running, 2 for warnings, 3 for errors
@@ -18,17 +17,24 @@ export class Containers extends React.Component {
     }
 
     async getContainerList() {
-        // const response = await axios.get('todo');
-        // if (!response.data) return; 
-        // this.setState({containers: response.data});
+        // TODO: handle getting a list of containers
         this.setState({containers: containerList});
     }
 
     async stopContainer(containerToStop) {
-        // const response = await axios.post('todo', {containerName: containerToStop.containerName});
-        // if (!response.data) return;
-        // this.data.containers = this.data.containers.filter(container => container.containerName !== containerToStop.containerName);
-        console.log('TODO: stop container ', containerToStop)
+        // TODO: handle stopping a container
+    }
+
+    async createContainer() {
+        // TODO: handle creating a container
+    }
+
+    async restartAllContainers() {
+        // TODO: handle restarting all containers
+    }
+
+    async stopAllContainers() {
+        // TODO: handle stoping all containers
     }
 
     componentDidMount() {
@@ -40,8 +46,14 @@ export class Containers extends React.Component {
             <div>
                 <div className="flex mb-3.5 justify-content-start">
                     <h2 className="text-2xl">Container list</h2>
-                    <button className="create-button ml-1.5 flex">
+                    <button className="create-button ml-1.5 flex" onClick={this.createContainer}>
                         Create
+                    </button>
+                    <button className="stop-button flex ml-auto" onClick={this.restartAllContainers}>
+                        Restart All
+                    </button>
+                    <button className="remove-button ml-1.5 flex" onClick={this.stopAllContainers}>
+                        Stop All
                     </button>
                 </div>
                 <div className="overview bg-white shadow-xl">
